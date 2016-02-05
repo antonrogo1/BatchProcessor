@@ -9,7 +9,7 @@ public class Main
 
 
         System.out.println("Pull Test 5");
-        System.out.println("Pull Test");
+        System.out.println("Pull Test ");
         New_class test;
     }
 }
