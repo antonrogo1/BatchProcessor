@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<batch>
+    <wd path="work" id="swd1"/>
+    <file path="dirout.txt" id="file1"/>
+    <cmd path="cmd" id="cmd1" out="file1" args="/c dir"/>
+</batch>
