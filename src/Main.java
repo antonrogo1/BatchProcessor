@@ -6,7 +6,8 @@ public class Main
     public static void main(String[] args)
     {
         System.out.println("Commit test");
-        System.out.println("Pull Test");
+        System.out.println("Pull Test 5");
+        System.out.println("Pull Test 6");
         New_class test;
     }
 }
