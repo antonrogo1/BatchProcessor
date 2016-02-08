@@ -3,10 +3,6 @@ package com.domain;
 import org.w3c.dom.Element;
 import com.exception.ProcessException;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
-
 /**
  * Created by Anton on 2/7/2016.
  */

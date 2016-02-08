@@ -3,6 +3,7 @@ package com.domain;
 import com.exception.ProcessException;
 import org.w3c.dom.Element;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -32,6 +33,19 @@ public class CmdCommand extends Command
     @Override
     public void execute(String workingDir) {
         System.out.println("Executing Cmd");
+
+
+
+        ProcessBuilder builder = new ProcessBuilder();
+        builder.command(command);
+        builder.directory(new File("work"));
+        builder.redirectError(new File("error.txt"));
+        builder.redirectOutput(new File("sortedwords.txt"));
+
+        Process process = builder.start();
+        process.waitFor();
+
+        System.out.println("Program terminated!");
     }
 
     @Override

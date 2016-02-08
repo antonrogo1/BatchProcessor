@@ -3,8 +3,6 @@ package com.domain;
 import com.exception.ProcessException;
 import org.w3c.dom.Element;
 
-import java.io.File;
-
 /**
  * Created by Anton on 2/7/2016.
  */
