@@ -72,13 +72,12 @@ public class BatchParser
         else if ("file".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing file");
             command = new FileCommand();
-            //Command cmd = FileCommand.parse(elem);
+            command.parse(elem);
         }
         else if ("cmd".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing cmd");
             command = new CmdCommand();
-            //Command cmd = CmdCommand.parse(elem);
-            //parseCmd(elem); // Example of parsing a cmd element
+            command.parse(elem);
         }
         else if ("pipe".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing pipe");

@@ -1,9 +1,6 @@
 package com.domain;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by Anton on 2/4/2016.
@@ -17,7 +14,7 @@ public class Batch
     public Batch()
     {
         this.workingDir = workingDir;
-        this.cmdLookup = new HashMap<String, Command>();
+        this.cmdLookup = new LinkedHashMap<String, Command>();
         this.commandList =  new ArrayList<Command>();
     }
 

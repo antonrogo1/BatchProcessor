@@ -42,6 +42,8 @@ public class BatchProcessor {
         {
             String commandId = commandSet.getKey();
             Command command = commandSet.getValue();
+
+            command.execute("work");
         }
     }
 

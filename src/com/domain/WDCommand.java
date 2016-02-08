@@ -27,21 +27,21 @@ public class WDCommand extends Command
 
     @Override
     public void execute(String workingDir) {
-
+        System.out.println("Executing WD");
     }
 
     @Override
     public void parse(Element element) throws ProcessException {
         String id = element.getAttribute("id");
         if (id == null || id.isEmpty()) {
-            throw new ProcessException("Missing ID in CMD Command");
+            throw new ProcessException("Missing ID in WD Command");
         }
         super.setId(id);
         System.out.println("ID: " + id);
 
         String path = element.getAttribute("path");
         if (path == null || path.isEmpty()) {
-            throw new ProcessException("Missing PATH in CMD Command");
+            throw new ProcessException("Missing PATH in WD Command");
         }
         this.path = path;
         System.out.println("Path: " + path);
