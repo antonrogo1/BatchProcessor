@@ -10,7 +10,8 @@ public class FileCommand extends Command
 
     @Override
     public String describe() {
-        return null;
+
+        return "Parsing File";
     }
 
     @Override

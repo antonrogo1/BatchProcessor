@@ -10,7 +10,7 @@ public class PipeCommand extends Command
 
     @Override
     public String describe() {
-        return null;
+        return "Parsing Pipe";
     }
 
     @Override

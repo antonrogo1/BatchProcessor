@@ -8,7 +8,8 @@ import org.w3c.dom.Element;
 public class CmdCommand extends Command {
     @Override
     public String describe() {
-        return null;
+
+        return "parsing cmd";
     }
 
     @Override

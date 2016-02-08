@@ -8,6 +8,9 @@ import org.w3c.dom.Element;
 public class WDCommand extends Command
 {
 
+    public WDCommand()
+    {}
+
     @Override
     public String describe() {
         return "Parsing wd";

@@ -24,6 +24,7 @@ import java.io.IOException;
  */
 public class BatchParser
 {
+
     public BatchParser()
     {}
 
@@ -41,11 +42,12 @@ public class BatchParser
             Node node = nodes.item(idx);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
-                this.buildCommand(elem);
+                Command parsedCommand = this.buildCommand(elem);
+
+
 
             }
         }
-
 
 
         return batch;
@@ -54,25 +56,30 @@ public class BatchParser
     private Command buildCommand(Element elem) throws ProcessException
     {
         String cmdName = elem.getNodeName();
+        Command command = null;
 
         if (cmdName == null) {
             throw new ProcessException("unable to parse command from " + elem.getTextContent());
         }
         else if ("wd".equalsIgnoreCase(cmdName)) {
-            Command command = new WDCommand();
+            System.out.println("Parsing wd");
+            command = new WDCommand();
             //Command cmd = WDCommand.parse(elem);
         }
         else if ("file".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing file");
+            command = new FileCommand();
             //Command cmd = FileCommand.parse(elem);
         }
         else if ("cmd".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing cmd");
+            command = new CmdCommand();
             //Command cmd = CmdCommand.parse(elem);
             //parseCmd(elem); // Example of parsing a cmd element
         }
         else if ("pipe".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing pipe");
+           command = new PipeCommand();
             //Command cmd = PipeCommand.parse(elem);
         }
         else {
