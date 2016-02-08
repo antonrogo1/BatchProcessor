@@ -1,0 +1,12 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 6EE6-2E55
+
+ Directory of C:\Users\Anton\IdeaProjects\BatchProcessor\work
+
+02/08/2016  04:33 PM    <DIR>          .
+02/08/2016  04:33 PM    <DIR>          ..
+02/04/2016  09:08 PM               174 batch1.dos.xml
+02/04/2016  09:06 PM             1,029 randomwords.txt
+02/04/2016  08:50 PM    <DIR>          src
+               2 File(s)          1,203 bytes
+               3 Dir(s)  66,523,279,360 bytes free

@@ -22,8 +22,10 @@ public class WDCommand extends Command
     }
 
     @Override
-    public void execute(String workingDir) {
+    public void execute(String workingDir)
+    {
         System.out.println("Executing WD");
+
     }
 
     @Override

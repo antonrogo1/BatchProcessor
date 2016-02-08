@@ -4,6 +4,7 @@ import com.exception.ProcessException;
 import org.w3c.dom.Element;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -31,10 +32,16 @@ public class CmdCommand extends Command
     }
 
     @Override
-    public void execute(String workingDir) {
+    public void execute(String workingDir) throws IOException, InterruptedException
+    {
         System.out.println("Executing Cmd");
 
-
+        List<String> command = new ArrayList<String>();
+        command.add(this.path);
+        for(String argument : this.cmdArgs)
+        {
+            command.add(argument);
+        }
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(command);

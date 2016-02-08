@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class BatchProcessor {
 
-    public static void main(String args[]) throws ParserConfigurationException, SAXException, ProcessException, IOException {
+    public static void main(String args[]) throws ParserConfigurationException, SAXException, ProcessException, IOException, InterruptedException {
 
         String filename = null;
         if(args.length > 0) {
@@ -36,12 +36,9 @@ public class BatchProcessor {
         System.out.println("Program exited");
     }
 
-    public static void executeBatch(Batch batch)
-    {
-        for (Map.Entry<String, Command> commandSet : batch.getCommands().entrySet())
+    public static void executeBatch(Batch batch) throws IOException, InterruptedException {
+        for (Command command : batch.getCommandsList())
         {
-            String commandId = commandSet.getKey();
-            Command command = commandSet.getValue();
 
             command.execute("work");
         }

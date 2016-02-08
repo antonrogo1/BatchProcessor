@@ -21,7 +21,11 @@ public class Batch
     public void addCommand(Command command)
     {
         this.commandList.add(command);
-        this.cmdLookup.put(command.getId() , command);
+    }
+
+    public List<Command> getCommandsList()
+    {
+        return this.commandList;
     }
 
     public String getWorkingDir()
@@ -33,6 +37,7 @@ public class Batch
     {
         return this.cmdLookup;
     }
+
 
 
     public void setWorkingDir(String workingDir) {
