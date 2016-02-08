@@ -4,11 +4,13 @@ import com.domain.*;
 import com.exception.*;
 
 
+import com.exception.ProcessException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import tst.examples.*;
 
 
 import javax.xml.parsers.DocumentBuilder;
@@ -43,9 +45,11 @@ public class BatchParser
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
                 Command parsedCommand = this.buildCommand(elem);
+                batch.addCommand(parsedCommand);
 
 
 
+                System.out.println("Command parsing");
             }
         }
 
@@ -53,8 +57,7 @@ public class BatchParser
         return batch;
     }
 
-    private Command buildCommand(Element elem) throws ProcessException
-    {
+    private Command buildCommand(Element elem) throws ProcessException{
         String cmdName = elem.getNodeName();
         Command command = null;
 
@@ -64,7 +67,7 @@ public class BatchParser
         else if ("wd".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing wd");
             command = new WDCommand();
-            //Command cmd = WDCommand.parse(elem);
+            command.parse(elem);
         }
         else if ("file".equalsIgnoreCase(cmdName)) {
             System.out.println("Parsing file");
@@ -86,7 +89,7 @@ public class BatchParser
             throw new ProcessException("Unknown command " + cmdName + " from: " + elem.getBaseURI());
         }
 
-        return null;
+        return command;
     }
 
 

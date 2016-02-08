@@ -14,19 +14,17 @@ public class Batch
     private Map<String,Command> cmdLookup;
     private List<Command> commandList;
 
-    public Batch() {}
-
-    public Batch(String workingDir)
+    public Batch()
     {
         this.workingDir = workingDir;
         this.cmdLookup = new HashMap<String, Command>();
         this.commandList =  new ArrayList<Command>();
-
     }
 
     public void addCommand(Command command)
     {
         this.commandList.add(command);
+        this.cmdLookup.put(command.getId() , command);
     }
 
     public String getWorkingDir()
@@ -39,4 +37,8 @@ public class Batch
         return this.cmdLookup;
     }
 
+
+    public void setWorkingDir(String workingDir) {
+        this.workingDir = workingDir;
+    }
 }
