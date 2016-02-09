@@ -45,6 +45,7 @@ public class CmdCommand extends Command
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(command);
+        Batch.getInstance().getWorkingPath
         builder.directory(new File("work"));
         builder.redirectError(new File("error.txt"));
         builder.redirectOutput(new File("sortedwords.txt"));
