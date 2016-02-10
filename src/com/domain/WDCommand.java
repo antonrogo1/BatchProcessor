@@ -3,6 +3,8 @@ package com.domain;
 import org.w3c.dom.Element;
 import com.exception.ProcessException;
 
+import java.io.File;
+
 /**
  * Created by Anton on 2/7/2016.
  */
@@ -24,8 +26,9 @@ public class WDCommand extends Command
     @Override
     public void execute(String workingDir)
     {
-        System.out.println("Executing WD");
-
+        System.out.println("Executing WD Command id:" + super.getId());
+        Batch.getInstance().setWorkingDir(this.path);
+        System.out.println("Command WD with id " + super.getId() + " set path to" + this.path);
     }
 
     @Override

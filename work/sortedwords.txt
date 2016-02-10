@@ -1,12 +1,100 @@
- Volume in drive C has no label.
- Volume Serial Number is 6EE6-2E55
-
- Directory of C:\Users\Anton\IdeaProjects\BatchProcessor\work
-
-02/08/2016  04:33 PM    <DIR>          .
-02/08/2016  04:33 PM    <DIR>          ..
-02/04/2016  09:08 PM               174 batch1.dos.xml
-02/04/2016  09:06 PM             1,029 randomwords.txt
-02/04/2016  08:50 PM    <DIR>          src
-               2 File(s)          1,203 bytes
-               3 Dir(s)  66,523,279,360 bytes free
+anemotropic
+anemotropic
+anemotropic
+anemotropic
+anemotropic
+bijection
+bijection
+bijection
+bijection
+bijection
+calorescent
+calorescent
+calorescent
+calorescent
+calorescent
+curlike
+curlike
+curlike
+curlike
+curlike
+dehumanised
+dehumanised
+dehumanised
+dehumanised
+dehumanised
+durban
+durban
+durban
+durban
+durban
+endanger
+endanger
+endanger
+endanger
+endanger
+euphemious
+euphemious
+euphemious
+euphemious
+euphemious
+gaseousness
+gaseousness
+gaseousness
+gaseousness
+gaseousness
+gooses
+gooses
+gooses
+gooses
+gooses
+intermuscularity
+intermuscularity
+intermuscularity
+intermuscularity
+intermuscularity
+lucid
+lucid
+lucid
+lucid
+lucid
+noncortical
+noncortical
+noncortical
+noncortical
+noncortical
+preundertaken
+preundertaken
+preundertaken
+preundertaken
+preundertaken
+rusher
+rusher
+rusher
+rusher
+rusher
+russellite
+russellite
+russellite
+russellite
+russellite
+snubbiest
+snubbiest
+snubbiest
+snubbiest
+snubbiest
+tropicalized
+tropicalized
+tropicalized
+tropicalized
+tropicalized
+vedanta
+vedanta
+vedanta
+vedanta
+vedanta
+waxiest
+waxiest
+waxiest
+waxiest
+waxiest

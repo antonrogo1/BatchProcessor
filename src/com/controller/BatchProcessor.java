@@ -23,7 +23,9 @@ public class BatchProcessor {
         }
         else
         {
-            filename = "work/batch1.dos.xml";
+            //filename = "work/batch1.dos.xml";
+            //filename = "work/batch2.dos.xml";
+            filename = "work/batch3.dos.xml";
         }
 
         File batchFile = new File(filename);
@@ -39,8 +41,7 @@ public class BatchProcessor {
     public static void executeBatch(Batch batch) throws IOException, InterruptedException {
         for (Command command : batch.getCommandsList())
         {
-
-            command.execute("work");
+            command.execute(Batch.getInstance().getWorkingDir());
         }
     }
 

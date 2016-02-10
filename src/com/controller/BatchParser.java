@@ -28,7 +28,7 @@ public class BatchParser
     {}
 
     public Batch buildBatch(File batchFile) throws IOException, ParserConfigurationException, SAXException, ProcessException {
-        Batch batch = new Batch();
+        Batch batch = Batch.getInstance();
 
         FileInputStream fis = new FileInputStream(batchFile);
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();

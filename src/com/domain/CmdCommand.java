@@ -36,6 +36,8 @@ public class CmdCommand extends Command
     {
         System.out.println("Executing Cmd");
 
+        Batch batch = Batch.getInstance();
+
         List<String> command = new ArrayList<String>();
         command.add(this.path);
         for(String argument : this.cmdArgs)
@@ -45,10 +47,30 @@ public class CmdCommand extends Command
 
         ProcessBuilder builder = new ProcessBuilder();
         builder.command(command);
-        Batch.getInstance().getWorkingPath
-        builder.directory(new File("work"));
-        builder.redirectError(new File("error.txt"));
-        builder.redirectOutput(new File("sortedwords.txt"));
+
+        builder.directory(new File(batch.getWorkingDir()));
+        File wd = builder.directory();
+
+        File inFile;
+        FileCommand inFileCommand;
+        if(inId != null)
+        {
+            inFileCommand =  (FileCommand)batch.getCommands().get(this.inId);
+
+            inFile = new File(wd,inFileCommand.getPath());
+            builder.redirectInput(inFile);
+        }
+
+        File outFile;
+        FileCommand outFileCommand;
+        if(outId != null)
+        {
+            outFileCommand =  (FileCommand)batch.getCommands().get(this.outId);
+
+            outFile = new File(wd,outFileCommand.getPath());
+            builder.redirectOutput(outFile);
+        }
+
 
         Process process = builder.start();
         process.waitFor();
@@ -92,7 +114,7 @@ public class CmdCommand extends Command
 
         String inID = element.getAttribute("in");
         if (!(inID == null || inID.isEmpty())) {
-            this.inId=inId;
+            this.inId=inID;
             System.out.println("inID: " + inID);
         }
 

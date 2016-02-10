@@ -22,8 +22,11 @@ public class FileCommand extends Command
     }
 
     @Override
-    public void execute(String workingDir) {
-        System.out.println("Executing File");
+    public void execute(String workingDir)
+    {
+        System.out.println("Executing File Command id:" + super.getId());
+
+        System.out.println("Command File with id " + super.getId() + " set path to" + this.path);
     }
 
     @Override
@@ -41,5 +44,10 @@ public class FileCommand extends Command
         }
         this.path = path;
         System.out.println("Path: " + path);
+    }
+
+    public String getPath()
+    {
+        return this.path;
     }
 }
