@@ -38,15 +38,15 @@ public class CmdCommand extends Command
 
         Batch batch = Batch.getInstance();
 
-        List<String> command = new ArrayList<String>();
-        command.add(this.path);
+        List<String> shellcommand = new ArrayList<String>();
+        shellcommand.add(this.path);
         for(String argument : this.cmdArgs)
         {
-            command.add(argument);
+            shellcommand.add(argument);
         }
 
         ProcessBuilder builder = new ProcessBuilder();
-        builder.command(command);
+        builder.command(shellcommand);
 
         builder.directory(new File(batch.getWorkingDir()));
         File wd = builder.directory();
@@ -75,7 +75,19 @@ public class CmdCommand extends Command
         Process process = builder.start();
         process.waitFor();
 
-        System.out.println("Program terminated!");
+        System.out.println("Cmd " + this.getId() + " finished");
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getInId() {
+        return inId;
+    }
+
+    public String getOutId() {
+        return outId;
     }
 
     @Override
@@ -124,5 +136,10 @@ public class CmdCommand extends Command
             System.out.println("outID: " + outID);
         }
 
+    }
+
+    public List<String> getCmdArgs()
+    {
+        return cmdArgs;
     }
 }

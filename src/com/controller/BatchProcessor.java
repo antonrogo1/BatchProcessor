@@ -25,7 +25,9 @@ public class BatchProcessor {
         {
             //filename = "work/batch1.dos.xml";
             //filename = "work/batch2.dos.xml";
-            filename = "work/batch3.dos.xml";
+            //filename = "work/batch3.dos.xml";
+            filename = "work/batch4.dos.xml";
+            //filename = "work/batch5.dos.xml";
         }
 
         File batchFile = new File(filename);

@@ -3,16 +3,21 @@
 
  Directory of C:\Users\Anton\IdeaProjects\BatchProcessor\work
 
-02/10/2016  12:06 AM    <DIR>          .
-02/10/2016  12:06 AM    <DIR>          ..
+02/10/2016  04:54 PM    <DIR>          .
+02/10/2016  04:54 PM    <DIR>          ..
+02/04/2016  08:42 PM             8,916 addLines.jar
+02/04/2016  08:42 PM            10,273 avgFile.jar
+02/10/2016  12:09 AM                 6 avgout.txt
 02/04/2016  09:08 PM               174 batch1.dos.xml
 02/09/2016  11:57 PM               321 batch2.dos.xml
 02/09/2016  11:53 PM               357 batch3.dos.xml
 02/09/2016  11:53 PM               343 batch4.dos.xml
 02/09/2016  11:54 PM               358 batch5.dos.xml
-02/10/2016  12:06 AM                 0 dirout.txt
+02/10/2016  04:54 PM                 0 dirout.txt
+02/10/2016  12:08 AM               702 numberdata.txt
 02/04/2016  09:06 PM             1,029 randomwords.txt
 02/10/2016  12:05 AM             1,130 reversesort.txt
 02/10/2016  12:05 AM             1,130 sortedwords.txt
-               9 File(s)          4,842 bytes
-               2 Dir(s)  65,651,462,144 bytes free
+02/10/2016  12:09 AM               132 sumout.txt
+              14 File(s)         24,871 bytes
+               2 Dir(s)  66,223,087,616 bytes free
