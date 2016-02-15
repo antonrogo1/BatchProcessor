@@ -26,16 +26,14 @@ public class CmdCommand extends Command
     }
 
     @Override
-    public String describe() {
-
-        return "parsing cmd";
+    public String describe()
+    {
+        return "Executing Cmd command " + this.getId();
     }
 
     @Override
     public void execute(String workingDir) throws IOException, InterruptedException
     {
-        System.out.println("Executing Cmd");
-
         Batch batch = Batch.getInstance();
 
         List<String> shellcommand = new ArrayList<String>();
@@ -78,33 +76,24 @@ public class CmdCommand extends Command
         System.out.println("Cmd " + this.getId() + " finished");
     }
 
-    public String getPath() {
-        return path;
-    }
-
-    public String getInId() {
-        return inId;
-    }
-
-    public String getOutId() {
-        return outId;
-    }
-
     @Override
     public void parse(Element element) throws ProcessException {
+
+        System.out.println("Parsing Cmd Command ");
+
         String id = element.getAttribute("id");
         if (id == null || id.isEmpty()) {
             throw new ProcessException("Missing ID in Cmd Command");
         }
         super.setId(id);
-        System.out.println("ID: " + id);
+
 
         String path = element.getAttribute("path");
         if (path == null || path.isEmpty()) {
             throw new ProcessException("Missing PATH in Cmd Command");
         }
         this.path = path;
-        System.out.println("Path: " + path);
+
 
         // Arguments must be passed to ProcessBuilder as a list of
         // individual strings.
@@ -136,6 +125,21 @@ public class CmdCommand extends Command
             System.out.println("outID: " + outID);
         }
 
+    }
+
+
+    /**  Getters  **/
+
+    public String getPath() {
+        return path;
+    }
+
+    public String getInId() {
+        return inId;
+    }
+
+    public String getOutId() {
+        return outId;
     }
 
     public List<String> getCmdArgs()

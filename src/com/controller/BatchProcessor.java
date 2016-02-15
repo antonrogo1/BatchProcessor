@@ -26,8 +26,8 @@ public class BatchProcessor {
             //filename = "work/batch1.dos.xml";
             //filename = "work/batch2.dos.xml";
             //filename = "work/batch3.dos.xml";
-            filename = "work/batch4.dos.xml";
-            //filename = "work/batch5.dos.xml";
+            //filename = "work/batch4.dos.xml";
+            filename = "work/batch5.dos.xml";
         }
 
         File batchFile = new File(filename);
@@ -43,8 +43,11 @@ public class BatchProcessor {
     public static void executeBatch(Batch batch) throws IOException, InterruptedException {
         for (Command command : batch.getCommandsList())
         {
+            command.describe();
             command.execute(Batch.getInstance().getWorkingDir());
         }
+
+        System.out.println("Finished Batch");
     }
 
 }

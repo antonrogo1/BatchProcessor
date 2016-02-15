@@ -20,13 +20,13 @@ public class WDCommand extends Command
 
     @Override
     public String describe() {
-        return "Parsing wd";
+
+        return "Executing WD command " + this.getId();
     }
 
     @Override
     public void execute(String workingDir)
     {
-        System.out.println("Executing WD Command id:" + super.getId());
         Batch.getInstance().setWorkingDir(this.path);
         System.out.println("Command WD with id " + super.getId() + " set path to" + this.path);
     }

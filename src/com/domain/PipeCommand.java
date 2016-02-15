@@ -23,7 +23,7 @@ public class PipeCommand extends Command
 
     @Override
     public String describe() {
-        return "Parsing Pipe";
+        return "Executing Pipe command " + this.getId();
     }
 
     @Override
@@ -97,8 +97,10 @@ public class PipeCommand extends Command
     }
 
     @Override
-    public void parse(Element element) throws ProcessException {
+    public void parse(Element element) throws ProcessException
+    {
 
+        System.out.println("Parsing Pipe Command");
         Batch batch = Batch.getInstance();
 
         String id = element.getAttribute("id");
@@ -106,11 +108,18 @@ public class PipeCommand extends Command
             throw new ProcessException("Missing ID in Pipe Command");
         }
         super.setId(id);
-        System.out.println("ID: " + id);
+
+        if(element.hasChildNodes())
+        {
+            System.out.println("Found Commands connected by Pipe");
+        }
 
 
         NodeList nodes = element.getChildNodes();
-        for (int idx = 0; idx < nodes.getLength(); idx++) {
+
+        for (int idx = 0; idx < nodes.getLength(); idx++)
+        {
+            System.out.println("Parsing commands connected by Pipe");
             Node node = nodes.item(idx);
             if (node.getNodeType() == Node.ELEMENT_NODE) {
                 Element elem = (Element) node;
@@ -122,8 +131,8 @@ public class PipeCommand extends Command
                     this.commands = new ArrayList<CmdCommand>();
 
                 this.commands.add(command);
-
             }
+            System.out.println("Finished parsing commands inside Pipe");
         }
     }
 }

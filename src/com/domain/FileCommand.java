@@ -18,19 +18,19 @@ public class FileCommand extends Command
     @Override
     public String describe() {
 
-        return "Parsing File";
+        return "Executing File command " + this.getId();
     }
 
     @Override
     public void execute(String workingDir)
     {
-        System.out.println("Executing File Command id:" + super.getId());
-
-        System.out.println("Command File with id " + super.getId() + " set path to" + this.path);
+        System.out.println("Command File with id " + super.getId() + " set File path to" + this.path);
     }
 
     @Override
-    public void parse(Element element) throws ProcessException {
+    public void parse(Element element) throws ProcessException
+    {
+        System.out.println("Parsing File Command");
         String id = element.getAttribute("id");
         if (id == null || id.isEmpty()) {
             throw new ProcessException("Missing ID in File Command");
